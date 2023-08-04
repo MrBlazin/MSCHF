@@ -26,7 +26,7 @@ Then to select a script do: `python scriptname.py`
   
 * Explanation: It takes user input to create payload.txt files and provides you the means to automatically type all of the contents of the payload until it's finished.
 
-* To run the Ghost Typer script, navigate to the Python-Weapons directory and then to the GhostTyper directory:
+* To run the Ghost Typer script, navigate to the Python-Weapons directory and then to `GhostTyper.py`:
   
 # Ghost Typer Installation and execution
 
