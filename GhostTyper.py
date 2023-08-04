@@ -1,0 +1,120 @@
+import os
+import pyautogui
+import time
+
+def create_payload_folder():
+    if not os.path.exists('payload_folder'):
+        os.makedirs('payload_folder')
+
+def create_or_type_or_delete_payloads():
+    print("\nGhost Typer:")
+    print("1. Create payload")
+    print("2. Execute payload")
+    print("3. Delete payload")
+    choice = input("\nEnter your choice: ")
+    if choice == '1':
+        create_payload_file()
+    elif choice == '2':
+        type_payloads_from_file()
+    elif choice == '3':
+        delete_payload_file()
+    else:
+        print("Invalid choice. Please try again.")
+        create_or_type_or_delete_payloads()
+
+def create_payload_file():
+    count = 0
+    while True:
+        count += 1
+        file_name = f'payload_folder/payload.txt' if count == 1 else f'payload_folder/payload{count}.txt'
+        if not os.path.exists(file_name):
+            break
+
+    with open(file_name, 'w') as file:
+        print("Type the payloads. To save the payload, type 'save payload' in a new line:")
+        while True:
+            user_input = input()
+            if user_input.strip().lower() == 'save payload':
+                break
+            file.write(user_input + '\n')
+
+def type_payloads_from_file():
+    files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
+    if not files:
+        print("No payload.txt file exists. Creating a new one...")
+        create_payload_file()
+    else:
+        print("Select a payload.txt file to type from:")
+        for i, file in enumerate(files, start=1):
+            print(f"{i}. {file}")
+
+        choice = int(input())
+        if 1 <= choice <= len(files):
+            selected_file = files[choice - 1]
+
+            with open(f'payload_folder/{selected_file}', 'r') as file:
+                lines = file.readlines()
+
+            countdown()
+            for line in lines:
+                pyautogui.typewrite(line.strip())
+                pyautogui.press('enter')
+        else:
+            print("Invalid choice.")
+
+def delete_payload_file():
+    files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
+    if not files:
+        print("No payload.txt file exists to delete.")
+    else:
+        print("Select a payload.txt file to delete:")
+        for i, file in enumerate(files, start=1):
+            print(f"{i}. {file}")
+
+        choice = int(input())
+        if 1 <= choice <= len(files):
+            selected_file = files[choice - 1]
+
+            confirm = input(f"Are you sure you want to delete {selected_file}? (yes/no): ").lower()
+            if confirm == 'yes':
+                os.remove(f'payload_folder/{selected_file}')
+                print(f"{selected_file} has been deleted.")
+        else:
+            print("Invalid choice.")
+
+def countdown():
+    print("Starting typing in:")
+    for i in range(5, 0, -1):
+        print(i)
+        time.sleep(1)
+
+def view_payload_files():
+    files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
+    if not files:
+        print("No payload.txt file exists.")
+    else:
+        for file in files:
+            print(f"\nContents of {file}:")
+            with open(f'payload_folder/{file}', 'r') as file:
+                for line in file:
+                    print(line.strip())
+
+if __name__ == "__main__":
+    create_payload_folder()
+    
+    while True:
+        print("\nGhost Typer:")
+        print("1. Create or execute or delete payloads")
+        print("2. View payload.txt files")
+        print("3. Exit")
+        choice = input("\nEnter your choice: ")
+        
+        if choice == '1':
+            create_or_type_or_delete_payloads()
+        elif choice == '2':
+            view_payload_files()
+        elif choice == '3':
+            print("Exiting the program...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
