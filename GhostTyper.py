@@ -31,10 +31,10 @@ def create_payload_file():
             break
 
     with open(file_name, 'w') as file:
-        print("Type the payloads. To save the payload, type 'save payload' in a new line:")
+        print("Type the payloads. To save the payload, type 'save' in a new line:")
         while True:
             user_input = input()
-            if user_input.strip().lower() == 'save payload':
+            if user_input.strip().lower() == 'save':
                 break
             file.write(user_input + '\n')
 
@@ -93,11 +93,22 @@ def view_payload_files():
     if not files:
         print("No payload.txt file exists.")
     else:
-        for file in files:
-            print(f"\nContents of {file}:")
-            with open(f'payload_folder/{file}', 'r') as file:
-                for line in file:
-                    print(line.strip())
+        print("Available payload files:")
+        for i, file in enumerate(files, 1):
+            print(f"{i}. {file}")
+
+        try:
+            choice = int(input("Enter the number of the file you want to view (e.g., 1): "))
+            if choice < 1 or choice > len(files):
+                print("Invalid choice. Please select a valid file number.")
+            else:
+                chosen_file = files[choice - 1]
+                print(f"\nContents of {chosen_file}:")
+                with open(f'payload_folder/{chosen_file}', 'r') as file:
+                    for line in file:
+                        print(line.strip())
+        except ValueError:
+            print("Invalid input. Please enter a valid file number.")
 
 if __name__ == "__main__":
     create_payload_folder()
