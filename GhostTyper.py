@@ -2,6 +2,12 @@ import os
 import pyautogui
 import time
 
+def clear_terminal():
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  # For Linux and macOS
+        os.system('clear')
+
 def create_payload_folder():
     if not os.path.exists('payload_folder'):
         os.makedirs('payload_folder')
@@ -20,7 +26,7 @@ def create_or_type_or_delete_payloads():
         delete_payload_file()
     else:
         print("Invalid choice. Please try again.")
-        create_or_type_or_delete_payloads()
+        time.sleep(2)
 
 def create_payload_file():
     count = 0
@@ -31,7 +37,7 @@ def create_payload_file():
             break
 
     with open(file_name, 'w') as file:
-        print("Type the payloads. To save the payload, type 'save' in a new line:")
+        print("\nType the payloads. To save the payload, type 'save' in a new line:")
         while True:
             user_input = input()
             if user_input.strip().lower() == 'save':
@@ -41,10 +47,10 @@ def create_payload_file():
 def type_payloads_from_file():
     files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
     if not files:
-        print("No payload.txt file exists. Creating a new one...")
+        print("\nNo payload.txt file exists. Creating a new one...")
         create_payload_file()
     else:
-        print("Select a payload.txt file to type from:")
+        print("\nSelect a payload.txt file to type from:")
         for i, file in enumerate(files, start=1):
             print(f"{i}. {file}")
 
@@ -61,13 +67,14 @@ def type_payloads_from_file():
                 pyautogui.press('enter')
         else:
             print("Invalid choice.")
+        time.sleep(2)
 
 def delete_payload_file():
     files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
     if not files:
-        print("No payload.txt file exists to delete.")
+        print("\nNo payload.txt file exists to delete.")
     else:
-        print("Select a payload.txt file to delete:")
+        print("\nSelect a payload.txt file to delete:")
         for i, file in enumerate(files, start=1):
             print(f"{i}. {file}")
 
@@ -81,9 +88,10 @@ def delete_payload_file():
                 print(f"{selected_file} has been deleted.")
         else:
             print("Invalid choice.")
+        time.sleep(2)
 
 def countdown():
-    print("Starting typing in:")
+    print("\nStarting typing in:")
     for i in range(5, 0, -1):
         print(i)
         time.sleep(1)
@@ -91,14 +99,14 @@ def countdown():
 def view_payload_files():
     files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
     if not files:
-        print("No payload.txt file exists.")
+        print("\nNo payload.txt file exists.")
     else:
-        print("Available payload files:")
+        print("\nAvailable payload files:")
         for i, file in enumerate(files, 1):
             print(f"{i}. {file}")
 
         try:
-            choice = int(input("Enter the number of the file you want to view (e.g., 1): "))
+            choice = int(input("\nEnter the number of the payload you want to view (e.g., 1): "))
             if choice < 1 or choice > len(files):
                 print("Invalid choice. Please select a valid file number.")
             else:
@@ -109,17 +117,19 @@ def view_payload_files():
                         print(line.strip())
         except ValueError:
             print("Invalid input. Please enter a valid file number.")
+        time.sleep(2)
 
 if __name__ == "__main__":
     create_payload_folder()
-    
+
     while True:
+        clear_terminal()
         print("\nGhost Typer:")
         print("1. Create or execute or delete payloads")
         print("2. View payload.txt files")
         print("3. Exit")
         choice = input("\nEnter your choice: ")
-        
+
         if choice == '1':
             create_or_type_or_delete_payloads()
         elif choice == '2':
@@ -129,3 +139,5 @@ if __name__ == "__main__":
             break
         else:
             print("Invalid choice. Please try again.")
+            time.sleep(2)
+
