@@ -13,10 +13,10 @@ def create_payload_folder():
         os.makedirs('payload_folder')
 
 def create_or_type_or_delete_payloads():
-    print("\nGhost Typer:")
-    print("1. Create payload")
-    print("2. Execute payload")
-    print("3. Delete payload")
+    print(" \nGhost Typer:")
+    print(" 1. Create payload")
+    print(" 2. Execute payload")
+    print(" 3. Delete payload")
     choice = input("\nEnter your choice: ")
     if choice == '1':
         create_payload_file()
@@ -134,9 +134,9 @@ if __name__ == "__main__":
                                                         ▀▀      ▀▀▀▀                     
 
               """)
-        print("    1. Create or execute or delete payloads")
-        print("    2. View payload.txt files")
-        print("    3. Exit")
+        print(" 1. Create or execute or delete payloads")
+        print(" 2. View payload.txt files")
+        print(" 3. Exit")
         choice = input("\nEnter your choice: ")
 
         if choice == '1':
