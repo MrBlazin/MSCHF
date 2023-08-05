@@ -16,7 +16,7 @@ To access the absolute kickass scripts in the "Python-Weapons" folder use this c
 ```
 cd "Python-Weapons"
 ```
-Then to select a script do: `python scriptname.py`
+Then to select a script do: `cd "scriptname"` and `python "scriptname".py`
 
 
 
@@ -26,7 +26,7 @@ Then to select a script do: `python scriptname.py`
   
 * Explanation: It takes user input to create payload.txt files and provides you the means to automatically type all of the contents of the payload until it's finished.
 
-* To run the Ghost Typer script, navigate to the Python-Weapons directory and then to `GhostTyper.py`:
+* To run the Ghost Typer script, navigate to the GhostTyper directory using `cd GhostTyper` and then do `python GhostTyper.py`:
   
 # Ghost Typer Installation and execution
 
@@ -40,8 +40,8 @@ python GhostTyper.py
 ```
 ## Script index:
 1. `GhostTyper.py`
-
 #
+
 # ⚔️ More Scripts Coming Soon!
 Our quest for powerful Python scripts doesn't end here! The battle continues, and more scripts will join the ranks to bolster your coding arsenal. Keep an eye on this repository for updates and new additions!
 
