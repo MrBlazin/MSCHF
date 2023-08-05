@@ -124,7 +124,16 @@ if __name__ == "__main__":
 
     while True:
         clear_terminal()
-        print("\nGhost Typer:")
+        print("""
+ ▄▄█▀▀▀▄█  ▀██                       ▄   █▀▀██▀▀█                                    
+▄█▀     ▀   ██ ▄▄     ▄▄▄    ▄▄▄▄  ▄██▄     ██     ▄▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄    ▄▄▄▄  ▄▄▄ ▄▄  
+██    ▄▄▄▄  ██▀ ██  ▄█  ▀█▄ ██▄ ▀   ██      ██      ▀█▄  █   ██▀  ██ ▄█▄▄▄██  ██▀ ▀▀ 
+▀█▄    ██   ██  ██  ██   ██ ▄ ▀█▄▄  ██      ██       ▀█▄█    ██    █ ██       ██     
+ ▀▀█▄▄▄▀█  ▄██▄ ██▄  ▀█▄▄█▀ █▀▄▄█▀  ▀█▄▀   ▄██▄       ▀█     ██▄▄▄▀   ▀█▄▄▄▀ ▄██▄    
+                                                   ▄▄ █      ██                      
+                                                    ▀▀      ▀▀▀▀                     
+
+              """)
         print("1. Create or execute or delete payloads")
         print("2. View payload.txt files")
         print("3. Exit")
