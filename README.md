@@ -26,16 +26,18 @@ Then to select a script do: `cd "scriptname"` and `python "scriptname".py`
   
 * Explanation: It takes user input to create payload.txt files and provides you the means to automatically type all of the contents of the payload until it's finished.
 
-* To run the Ghost Typer script, navigate to the GhostTyper directory using `cd GhostTyper` and then do `python GhostTyper.py`:
+* Any confusion to run the Ghost Typer script follow the directions below:
   
-# Ghost Typer Installation and execution
+# Ghost Typer Prerequisites and deployment:
 
-The requirement for this script is pyautogui
+The requirements for this script is:
 ```bash
 pip install pyautogui
 ```
 Now, you can execute the Ghost Typer script:
 ```
+cd GhostTyper
+
 python GhostTyper.py
 ```
 ## Script index:
