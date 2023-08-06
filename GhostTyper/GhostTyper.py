@@ -50,9 +50,9 @@ def type_payloads_from_file():
     else:
         print("\n Select a payload.txt file to type from:")
         for i, file in enumerate(files, start=1):
-            print(f"{i}. {file}")
+            print(f" {i}. {file}")
 
-        choice = int(input())
+        choice = int(input(f" "))
         if 1 <= choice <= len(files):
             selected_file = files[choice - 1]
 
@@ -91,7 +91,7 @@ def delete_payload_file():
 def countdown():
     print("\n Starting typing in:")
     for i in range(5, 0, -1):
-        print( i)
+        print(f" {i}")
         time.sleep(1)
 
 def view_payload_files():
