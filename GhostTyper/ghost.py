@@ -11,7 +11,17 @@ def create_payload_folder():
         os.makedirs('payload_folder')
 
 def create_or_type_or_delete_payloads():
-    print("\n Ghost Typer:")
+    clear_terminal()
+    print("""
+     ▄▄█▀▀▀▄█  ▀██                       ▄   █▀▀██▀▀█                                    
+    ▄█▀     ▀   ██ ▄▄     ▄▄▄    ▄▄▄▄  ▄██▄     ██     ▄▄▄▄ ▄▄▄ ▄▄▄ ▄▄▄    ▄▄▄▄  ▄▄▄ ▄▄  
+    ██    ▄▄▄▄  ██▀ ██  ▄█  ▀█▄ ██▄ ▀   ██      ██      ▀█▄  █   ██▀  ██ ▄█▄▄▄██  ██▀ ▀▀ 
+    ▀█▄    ██   ██  ██  ██   ██ ▄ ▀█▄▄  ██      ██       ▀█▄█    ██    █ ██       ██     
+     ▀▀█▄▄▄▀█  ▄██▄ ██▄  ▀█▄▄█▀ █▀▄▄█▀  ▀█▄▀   ▄██▄       ▀█     ██▄▄▄▀   ▀█▄▄▄▀ ▄██▄    
+                                                       ▄▄ █      ██                      
+                                                        ▀▀      ▀▀▀▀                     
+
+              """)
     print(" 1. Create payload")
     print(" 2. Execute payload")
     print(" 3. Delete payload")
