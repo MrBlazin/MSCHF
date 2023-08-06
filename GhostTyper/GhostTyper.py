@@ -3,10 +3,8 @@ import pyautogui
 import time
 
 def clear_terminal():
-    if os.name == 'nt':  # For Windows
-        os.system('cls')
-    else:  # For Linux and macOS
-        os.system('clear')
+    os.name == 'nt'
+    os.system('cls')
 
 def create_payload_folder():
     if not os.path.exists('payload_folder'):
@@ -37,17 +35,17 @@ def create_payload_file():
             break
 
     with open(file_name, 'w') as file:
-        print("\nType the payloads. To save the payload, type 'save' in a new line:\n")
+        print("\n Type the payloads. To save the payload, type 'save' in a new line:\n ")
         while True:
-            user_input = input()
+            user_input = input(" ")
             if user_input.strip().lower() == 'save':
                 break
-            file.write(user_input + '\n')
+            file.write(user_input + '\n ')
 
 def type_payloads_from_file():
     files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
     if not files:
-        print("\n No payload.txt file exists. Creating a new one...")
+        print("\n No payload.txt file exists. Creating a new one...\n ")
         create_payload_file()
     else:
         print("\n Select a payload.txt file to type from:")
@@ -78,14 +76,14 @@ def delete_payload_file():
         for i, file in enumerate(files, start=1):
             print(f" {i}. {file}")
 
-        choice = int(input())
+        choice = int(input(" "))
         if 1 <= choice <= len(files):
             selected_file = files[choice - 1]
 
-            confirm = input(f"Are you sure you want to delete {selected_file}? (yes/no): ").lower()
+            confirm = input(f" Are you sure you want to delete {selected_file}? (yes/no): ").lower()
             if confirm == 'yes':
                 os.remove(f'payload_folder/{selected_file}')
-                print(f"{selected_file} has been deleted.")
+                print(f" {selected_file} has been deleted.")
         else:
             print(" Invalid choice.")
         time.sleep(2)
@@ -103,7 +101,7 @@ def view_payload_files():
     else:
         print("\n Available payload files:")
         for i, file in enumerate(files, 1):
-            print(f"{i}. {file}")
+            print(f" {i}. {file}")
 
         try:
             choice = int(input("\n Enter the number of the payload you want to view (e.g., 1): "))
@@ -114,14 +112,18 @@ def view_payload_files():
                 print(f"\n Contents of {chosen_file}:")
                 with open(f'payload_folder/{chosen_file}', 'r') as file:
                     for line in file:
-                        print(line.strip())
+                        print(" "+line.strip())
         except ValueError:
             print(" Invalid input. Please enter a valid file number.")
-        time.sleep(2)
+        time.sleep(5)
 
 if __name__ == "__main__":
     create_payload_folder()
-
+    if os.name == 'nt' and os.environ.get('PROMPT') is None:
+            print("Starting in a new Command Prompt...")
+            time.sleep(2)
+            os.system('start cmd /k python "' + os.path.abspath(__file__) + '"')
+            exit()
     while True:
         clear_terminal()
         print("""
