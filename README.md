@@ -38,10 +38,10 @@ Now, you can execute the Ghost Typer script:
 ```
 cd GhostTyper
 
-python GhostTyper.py
+py Ghost.py
 ```
 ## Script index:
-1. `GhostTyper.py`
+1. `GhostTyper`
 #
 
 # ⚔️ More Scripts Coming Soon!
