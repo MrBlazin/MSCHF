@@ -22,7 +22,7 @@ Then to select a script do: `cd "scriptfolder"` then `py scriptname.py`
 # 👻 Ghost Typer:
 * Description: This script summons a Sinister ghost and watch as it takes control of your keyboard! With this fearsome script, you can create, execute, view, and delete payloads, unleashing a haunting typing frenzy upon your screen.
   
-* Explanation: It takes user input to create payload.txt files and provides you the means to automatically type all of the contents of the payload until it's finished.
+* Explanation: It takes user input to create `payload.txt` files and provides you the means to automatically type all of the contents of the payload until it's finished.
 
 * Any confusion to run the Ghost Typer script follow the directions below:
   
