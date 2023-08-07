@@ -16,7 +16,7 @@ To access the absolute kickass scripts in the "Blazin-MSCHF" repo use this comma
 ```
 cd "MSCHF"
 ```
-Then to select a script do: `cd "scriptname"` and `py "scriptname".py`
+Then to select a script do: `cd "scriptfolder"` then `py scriptname.py`
 
 
 # 👻 Ghost Typer:
