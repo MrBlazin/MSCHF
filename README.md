@@ -1,24 +1,22 @@
-# Python Weapons - Unleash the Power of Automation! 🔥
+# MSCHF - Unleash the HOUNDS! 🔥
 
-Welcome to the Python Weapons repository, where you'll find an arsenal of powerful Python scripts designed to empower you in your programming journey. These scripts are crafted to automate tasks and provide utility, saving you time and effort so you can focus on conquering new challenges!
+Welcome to Blazin's MSCHF repository, where you'll find an arsenal of powerful Python weapons designed to aid you in your hacking journey. These scripts are crafted to automate tasks and provide utility among other things! Currently in development so stay tuned!
 
 
 
-## 🚀 Copy the Repository
+## 😈 Copy the Repository
 
-To get started with the Python Weapons arsenal, you can copy the entire repository to your local machine using the following `git` command:
+To get started with this Python Weapons arsenal, you can copy the entire repository to your local machine using the following `git` command:
 This command will clone the entire repository, including all the scripts and files, to a folder named "Python-Weapons" in your current directory. Now you have the complete collection of Python scripts at your fingertips!
 
 ```bash
-git clone https://github.com/MrBlazin/Python-Weapons.git
+git clone https://github.com/MrBlazin/MSCHF.git
 ```
-To access the absolute kickass scripts in the "Python-Weapons" folder use this command:
+To access the absolute kickass scripts in the "Blazin-MSCHF" repo use this command:
 ```
-cd "Python-Weapons"
+cd "MSCHF"
 ```
-Then to select a script do: `cd "scriptname"` and `python "scriptname".py`
-
-
+Then to select a script do: `cd "scriptname"` and `py "scriptname".py`
 
 
 # 👻 Ghost Typer:
