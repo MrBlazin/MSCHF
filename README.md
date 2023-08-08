@@ -24,7 +24,7 @@ Then to select a script do: `cd "scriptfolder"` then `py scriptname.py`
   
 * Explanation: It takes user input to create `payload.txt` files and provides you the means to automatically type all of the contents of the payload until it's finished.
 
-* Any confusion to run the Ghost Typer script follow the directions below:
+* Any confusion about running the Ghost Typer script follow the directions below:
   
 # Ghost Typer Prerequisites and deployment:
 
@@ -36,7 +36,7 @@ Now, you can execute the Ghost Typer script:
 ```
 cd GhostTyper
 
-py Ghost.py
+py GT.py
 ```
 ## Script index:
 1. `GhostTyper`
