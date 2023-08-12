@@ -7,7 +7,7 @@ Welcome to Blazin's MSCHF repository, where you'll find an arsenal of powerful P
 ## 😈 Copy the Repository
 
 To get started with this Python Weapons arsenal, you can copy the entire repository to your local machine using the following `git` command:
-This command will clone the entire repository, including all the scripts and files, to a folder named "Python-Weapons" in your current directory. Now you have the complete collection of Python scripts at your fingertips!
+This command will clone the entire repository, including all the scripts and files, to a folder named "MSCHF" in your current directory. Now you have the complete collection of Python scripts at your fingertips!
 
 ```bash
 git clone https://github.com/MrBlazin/MSCHF.git
