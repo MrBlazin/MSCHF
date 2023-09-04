@@ -2,7 +2,7 @@ import os
 import pyautogui
 import time
 
-Version = "1.0.0"
+Version = "1.1.0"
 
 # Function to clear the terminal screen based on the operating system
 def clear_terminal():
