@@ -24,7 +24,7 @@ def create_or_type_or_delete_or_view_payloads():
     ▀█▄    ██   ██  ██  ██   ██ ▄ ▀█▄▄  ██      ██       ▀█▄█    ██    █ ██       ██
      ▀▀█▄▄▄▀█  ▄██▄ ██▄  ▀█▄▄█▀ █▀▄▄█▀  ▀█▄▀   ▄██▄       ▀█     ██▄▄▄▀   ▀█▄▄▄▀ ▄██▄
                                                        ▄▄ █      ██
-        By: MrBlazin - github.com/MrBlazin              ▀▀      ▀▀▀▀  {Version}
+        By: MrBlazin                                    ▀▀      ▀▀▀▀  {Version}
     """)
     print("==" * 50)
     print("\n ")
@@ -37,7 +37,7 @@ def create_or_type_or_delete_or_view_payloads():
     if choice == '1':
         create_payload_file()
     elif choice == '2':
-        type_payloads_from_file()
+        execute_payload()
     elif choice == '3':
         delete_payload_file()
     elif choice == '4':
@@ -108,41 +108,6 @@ def get_payload_count():
             break
     return count
 
-# Function to type spam payloads from a file
-def type_spam_payloads_from_file(file_name):
-    with open(f'payload_folder/{file_name}', 'r') as file:
-        lines = file.readlines()
-
-    input("\n Press Enter to start ghosttyping...\n >")
-
-    countdown()
-
-    for i, line in enumerate(lines, start=1):
-        pyautogui.typewrite(line.strip())
-        pyautogui.press('enter')
-        print(
-            "Progress: [{}{}] {}%".format("=" * int(i / len(lines) * 20), " " * (20 - int(i / len(lines) * 20)),
-                                          int(i / len(lines) * 100)), end="\r")
-
-    time.sleep(2)
-
-# Function to type normal payloads from a file
-def type_payloads_from_file_normal(file_name):
-    with open(f'payload_folder/{file_name}', 'r') as file:
-        lines = file.readlines()
-
-    input("\n Press Enter to start ghosttyping...\n >")
-
-    countdown()
-
-    for i, line in enumerate(lines, start=1):
-        pyautogui.typewrite(line.strip())
-        pyautogui.press('enter')
-        print(
-            "Progress: [{}{}] {}%".format("=" * int(i / len(lines) * 20), " " * (20 - int(i / len(lines) * 20)),
-                                          int(i / len(lines) * 100)), end="\r")
-
-    time.sleep(2)
 
 # Function to delete a payload file
 def delete_payload_file():
@@ -174,6 +139,39 @@ def countdown():
         print(f" {i}")
         time.sleep(1)
 
+def execute_payload():
+    files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
+
+    if not files:
+        print("\n  No payload file exists.")
+    else:
+        print("\n  Available payload files:")
+        for i, file in enumerate(files, 1):
+            print(f" {i}. {file}")
+
+        try:
+            choice = int(input("\n  Enter the number of the payload you want to execute (e.g., 1):\n >"))
+            if 1 <= choice <= len(files):
+                chosen_file = files[choice - 1]
+                with open(f'payload_folder/{chosen_file}', 'r') as file:
+                    lines = file.readlines()
+
+                    input("\n Press Enter to start ghosttyping...\n >")
+
+                    countdown()
+
+                    for i, line in enumerate(lines, start=1):
+                        pyautogui.typewrite(line.strip())
+                        pyautogui.press('enter')
+                        print(
+                            "Progress: [{}{}] {}%".format("=" * int(i / len(lines) * 20), " " * (20 - int(i / len(lines) * 20)),
+                                                        int(i / len(lines) * 100)), end="\r")
+                    else:
+                        print("\n Press 'ENTER' to EXIT")
+                    input()  # Wait for user to press enter
+        except ValueError:
+            print(" Invalid input. Please enter a valid file number.")
+
 # Function to view the contents of payload files
 def view_payload_files():
     files = [f for f in os.listdir('payload_folder') if f.startswith('payload')]
@@ -197,7 +195,8 @@ def view_payload_files():
                 print("  Invalid choice. Please select a valid file number.")
         except ValueError:
             print(" Invalid input. Please enter a valid file number.")
-        
+
+            
         print("\n Press 'ENTER' to EXIT viewing mode")
         input()  # Wait for user to press enter
         
